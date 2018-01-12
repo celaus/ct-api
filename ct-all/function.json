@@ -1,0 +1,25 @@
+{
+  "disabled": false,
+  "bindings": [
+    {
+      "authLevel": "function",
+      "name": "req",
+      "type": "httpTrigger",
+      "direction": "in"
+    },
+    {
+      "name": "$return",
+      "type": "http",
+      "direction": "out"
+    },
+    {
+      "type": "documentDB",
+      "name": "docs",
+      "databaseName": "cryptrackr",
+      "collectionName": "ticker",
+      "connection": "cryptrackr_DOCUMENTDB",
+      "direction": "in",
+      "sqlQuery": "SELECT  c.pair, c.exchange, c.timestamp, c.lowest_ask, c.highest_bid  FROM c order by c.timestamp desc"
+    }
+  ]
+}

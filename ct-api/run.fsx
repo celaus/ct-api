@@ -8,12 +8,12 @@ open Newtonsoft.Json
 
 type Ticker = {
     exchange: string
-    timestamp: uint64
+    timestamp: int64
     pair: string
     last_trade_price: string
     lowest_ask: string
     highest_bid: string
-    volume: uint64
+    volume: double
 }
 
 let Run(req: HttpRequestMessage, newTicker : byref<obj>, log: TraceWriter) =
